@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import './ItemDetailContainer.css';
-import Item from "../../components/Item/Item";
-import Spinner from '../../components/Spinner/Spinner';
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Spinner from '../Spinner/Spinner';
+
 
 const ItemDetailContainer = () => {
 	const [item, setItem] = useState([]);
@@ -16,7 +17,7 @@ const ItemDetailContainer = () => {
 	useEffect(() => {
 		
 		axios('/datos.json').then(res =>	{
-			const foundItem = res.data.find(x => x.id === userID)
+			const foundItem = res.data.find(x => x.id === Number(userID))
 			setItem(foundItem);
 
 		});
@@ -28,18 +29,14 @@ const ItemDetailContainer = () => {
 	}, [userID]);
 
 	return (
-		<div className='ItemListContainer-Container'>
+		<div className='ItemDetailContainer'>
 			{isLoading ? (
 				<Spinner />
 			) : (
-				<div className='ItemListContainer-detail'>
-					{item.map(item =>  { 
-						return (
-							<div key={item.id}>
-								<Item data={item} />
-							</div>
-						);
-					})}
+				<div key={item.id}>
+
+					<ItemDetail data={item} />
+
 				</div>
 			)}
 		</div>

@@ -11,7 +11,7 @@ import Nav from './components/Nav/Nav';
 import Shop from './views/Shop/Shop';
 import About from './views/About/About';
 import Cart from './views/Cart/Cart';
-import ItemDetailContainer from './views/ItemDetailContainer/ItemDetailContainer';
+import Detail from './views/Detail/Detail';
 
 const App = () => {
 	return (
@@ -23,7 +23,7 @@ const App = () => {
 					<Route path='/' element={<Shop />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/cart' element={<Cart/>} />
-					<Route path='/detail/:id' element={<ItemDetailContainer />} />
+					<Route path='/detail/:id' element={< Detail />} />
 				</Routes>
 			</div>
 		</Router>
