@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./ItemCounter.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom';
 
 const ItemCount = (props) => {
 
@@ -41,7 +41,11 @@ const ItemCount = (props) => {
                 <button onClick={handlerCounterDown}><FontAwesomeIcon icon={faMinusCircle} /></button>
             </div>
 
-            <button onClick={agregarCarrito}>Agregar al Carrito</button>
+            <button onClick={agregarCarrito}>
+                <Link to={`/cart`} className='LinkCard'>
+					AgregarCarrito
+				</Link>    
+            </button>
 
         </div>
     );

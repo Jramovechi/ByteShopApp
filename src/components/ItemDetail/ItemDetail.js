@@ -31,9 +31,9 @@ const ItemDetail = ({ data }) => {
 		</CardContent>
 
 		<ItemCount
-                stock= {10}
-                initial= {1}
-                />
+            stock= {10}
+            initial= {1}
+        />
 		</Card>
 	);
 };
