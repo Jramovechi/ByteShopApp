@@ -1,0 +1,15 @@
+.Shop {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	background: rgb(1, 41, 1);
+	background: linear-gradient(
+		90deg,
+		rgba(1, 41, 1, 1) 48%,
+		rgba(1, 36, 0, 1) 100%,
+		rgba(1, 31, 1, 1) 100%,
+		rgba(1, 13, 1, 1) 100%,
+		rgba(0, 0, 0, 1) 100%
+	);
+}

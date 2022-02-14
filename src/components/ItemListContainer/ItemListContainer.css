@@ -1,0 +1,16 @@
+.ItemListContainer-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin: 40px 0 40px 0;
+	gap: 40px;
+}
+
+.ItemListContainer-Container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.LinkCard {
+	text-decoration: none;
+}
