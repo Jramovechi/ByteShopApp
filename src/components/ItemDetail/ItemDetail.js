@@ -1,10 +1,19 @@
-import * as React from 'react';
+import React , { useState } from 'react';
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 
 const ItemDetail = ({ data }) => {
+	const [comprado, setComprado] = useState(false)
+
+	const onAdd = (value) => {
+		setComprado(true);
+	}
+
+
 	return (
 
 		<Card sx={{ maxWidth: 355 }} className='Card'>
@@ -30,10 +39,12 @@ const ItemDetail = ({ data }) => {
 			</Typography>
 		</CardContent>
 
-		<ItemCount
-            stock= {10}
-            initial= {1}
-        />
+		{comprado ? (
+        <Link to="/cart"><button>Terminar Compra</button></Link>
+		) : (
+			<ItemCount stock={ data.stock } initial={1} onAdd={onAdd} />
+		)}
+
 		</Card>
 	);
 };

@@ -1,34 +1,21 @@
-import React, {useState} from "react";
-import "./ItemCounter.css";
+import React, { useState } from "react";
+import "./ItemCount.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
-const ItemCount = (props) => {
 
-    const [counter, setCounter] = useState(props.initial);
-    const stock = props.stock;
+const ItemCount = ( { stock , initial, onAdd }) => {
+
+    const [counter, setCounter] = useState(initial);
+    
 
 
     const handlerCounterUp = () => {    
-        if (counter < stock) {
-            setCounter(counter + 1);
-        } else {
-            alert ("Sin Stock");
-        };
-
-
+        counter < stock && setCounter(counter + 1)
     };
 
     const handlerCounterDown = () => {
-        if (counter > 1) {
-            setCounter(counter - 1); 
-        };
-    };
-
-    const agregarCarrito = () => {
-        alert("Agregaste al Carrito")
-
+        counter > initial && setCounter(counter - 1)
     };
 
     return(
@@ -39,13 +26,8 @@ const ItemCount = (props) => {
             <div className="btn-section">
                 <button onClick={handlerCounterUp}><FontAwesomeIcon icon={faPlusCircle} /></button>
                 <button onClick={handlerCounterDown}><FontAwesomeIcon icon={faMinusCircle} /></button>
+                <button onClick={() => onAdd(counter)}>Agregar al carrito</button>
             </div>
-
-            <button onClick={agregarCarrito}>
-                <Link to={`/cart`} className='LinkCard'>
-					AgregarCarrito
-				</Link>    
-            </button>
 
         </div>
     );
