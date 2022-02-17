@@ -1,5 +1,8 @@
 import './App.css';
 
+//Context
+import { cartContext } from './Context/cartContext';
+
 // REACT ROUTER DOM
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -15,18 +18,21 @@ import Detail from './views/Detail/Detail';
 
 const App = () => {
 	return (
-		<Router>
-			<div className='App'>
-				<Header />
-				<Nav />
-				<Routes>
-					<Route path='/' element={<Shop />} />
-					<Route path='/about' element={<About />} />
-					<Route path='/cart' element={<Cart/>} />
-					<Route path='/detail/:id' element={< Detail />} />
-				</Routes>
-			</div>
-		</Router>
+		<cartContext.Provider>
+			<Router>
+				<div className='App'>
+					<Header />
+					<Nav />
+					<Routes>
+						<Route path='/' element={<Shop />} />
+						<Route path='/about' element={<About />} />
+						<Route path='/cart' element={<Cart/>} />
+						<Route path='/detail/:id' element={< Detail />} />
+					</Routes>
+				</div>
+			</Router>
+		</cartContext.Provider>
+		
 	);
 };
 

@@ -1,18 +1,25 @@
-import React , { useState } from 'react';
+import React , { useState, useContext  } from 'react';
+import { cartContext } from '../../Context/cartContext'
+
+//Componentes + CSS
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
+//Material UI
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+// REACT ROUTER DOM
 import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({ data }) => {
 	const [comprado, setComprado] = useState(false)
 
-	const onAdd = (value) => {
-		setComprado(true);
-	}
+	const addCart = useContext(cartContext);
 
+	const onAdd = () => {
+		setComprado(true);
+		addCart();
+	}
 
 	return (
 

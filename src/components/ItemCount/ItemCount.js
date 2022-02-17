@@ -11,12 +11,12 @@ const ItemCount = ( { stock , initial, onAdd }) => {
 
 
     const handlerCounterUp = () => {    
-        counter < stock && setCounter(counter + 1)
+        counter < stock ? setCounter(counter + 1) : alert("Superaste el stock de productos :(") 
     };
 
     const handlerCounterDown = () => {
-        counter > initial && setCounter(counter - 1)
-    };
+        if(counter > initial) setCounter(counter - 1)
+    }   
 
     return(
         <div className="CounterSection">
