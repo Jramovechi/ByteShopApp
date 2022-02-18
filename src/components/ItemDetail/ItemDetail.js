@@ -1,5 +1,5 @@
 import React , { useState, useContext  } from 'react';
-import { cartContext } from '../../Context/cartContext'
+import { cartContext } from '../../Context/cartContext';
 
 //Componentes + CSS
 import "./ItemDetail.css";
@@ -12,13 +12,16 @@ import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({ data }) => {
+	
+	const { addCart } = useContext(cartContext);
+
 	const [comprado, setComprado] = useState(false)
 
-	const addCart = useContext(cartContext);
+	console.log(addCart);
 
-	const onAdd = () => {
+	const onAdd = (stock) => {
 		setComprado(true);
-		addCart();
+		addCart({ ...data, cantidad: stock })
 	}
 
 	return (
