@@ -13,16 +13,17 @@ import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ data }) => {
 	
-	const { addCart } = useContext(cartContext);
+	const { cartList, addCart } = useContext(cartContext);
 
 	const [comprado, setComprado] = useState(false)
 
-	console.log(addCart);
-
-	const onAdd = (stock) => {
+	const onAdd = (stock ) => {
 		setComprado(true);
 		addCart({ ...data, cantidad: stock })
 	}
+
+
+	console.log(cartList);
 
 	return (
 
@@ -49,11 +50,18 @@ const ItemDetail = ({ data }) => {
 			</Typography>
 		</CardContent>
 
-		{comprado ? (
-        <Link to="/cart"><button>Terminar Compra</button></Link>
-		) : (
-			<ItemCount stock={ data.stock } initial={1} onAdd={onAdd} />
-		)}
+		{comprado ? 
+		
+		<>
+		<ItemCount initial={1} stock={ data.stock } onAdd={ onAdd } />
+            <div>
+                <Link to='/shop'><button> Seguir comprando </button></Link> 
+                <Link to='/cart'><button> Ir al Carrito </button></Link> 
+            </div>
+		</>	
+		: 
+		<ItemCount stock={ data.stock } initial={1} onAdd={onAdd} />
+		}
 
 		</Card>
 	);

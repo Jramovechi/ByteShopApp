@@ -1,7 +1,7 @@
 import './App.css';
 
 //Context
-import { cartContext } from './Context/cartContext';
+import { CartProvider } from './Context/cartContext';
 
 // REACT ROUTER DOM
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -18,7 +18,7 @@ import Detail from './views/Detail/Detail';
 
 const App = () => {
 	return (
-		<cartContext.Provider>
+		<CartProvider>
 			<Router>
 				<div className='App'>
 					<Header />
@@ -31,7 +31,7 @@ const App = () => {
 					</Routes>
 				</div>
 			</Router>
-		</cartContext.Provider>
+		</CartProvider>
 		
 	);
 };
