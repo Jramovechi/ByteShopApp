@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
 
 	//Funcion Cantidad de Carrito
 	const totalCart = (value) => {
-		return cartList.reduce( (acum, value) => acum = acum + value.stock , 0 )
+		return cartList.reduce((acum, valor) => (acum +(valor.cantidad * valor.price)), 0)
 	}
 
 	//Funcion Limpiar Carrito
@@ -37,12 +37,15 @@ export const CartProvider = ({ children }) => {
         setCartList([])
     }
 
+	const cantidadItem = (prod) => {
+		return cartList.reduce( (acum, prod) => acum = acum + prod.cantidad , 0 )
+	}
 
 	// 3 - RETORNAMOS NUESTRO CONTEXT CON UN .PROVIDER
 
 	return (
 
-		<cartContext.Provider value={ { cartList , setCartList, addCart , deleteItem, totalCart, clearCart } }>
+		<cartContext.Provider value={ { cartList , setCartList, addCart , deleteItem, totalCart, clearCart, cantidadItem } }>
 			{/* 4 - PROPS.CHILDREN O BIEN CHILDREN */}
 			{ children }
 		</cartContext.Provider>

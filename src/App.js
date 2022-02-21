@@ -13,8 +13,8 @@ import Nav from './components/Nav/Nav';
 // VIEWS
 import Shop from './views/Shop/Shop';
 import About from './views/About/About';
-import Cart from './views/Cart/Cart';
 import Detail from './views/Detail/Detail';
+import CartView from './views/CartView/CartView';
 
 const App = () => {
 	return (
@@ -24,9 +24,9 @@ const App = () => {
 					<Header />
 					<Nav />
 					<Routes>
-						<Route path='/' element={<Shop />} />
-						<Route path='/about' element={<About />} />
-						<Route path='/cart' element={<Cart/>} />
+						<Route path='/' element={< Shop />} />
+						<Route path='/about' element={< About />} />
+						<Route path='/cart' element={< CartView />} />
 						<Route path='/detail/:id' element={< Detail />} />
 					</Routes>
 				</div>

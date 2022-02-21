@@ -55,7 +55,7 @@ const ItemDetail = ({ data }) => {
 		<>
 		<ItemCount initial={1} stock={ data.stock } onAdd={ onAdd } />
             <div>
-                <Link to='/shop'><button> Seguir comprando </button></Link> 
+                <Link to='/'><button> Seguir comprando </button></Link> 
                 <Link to='/cart'><button> Ir al Carrito </button></Link> 
             </div>
 		</>	

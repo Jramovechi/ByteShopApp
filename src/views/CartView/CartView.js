@@ -1,17 +1,19 @@
 import React from 'react';
 
+import Cart from "../../components/Cart/Cart";
+
 const styles = {
 	container: {
 		margin: '40px 0 40px 0',
 	},
 };
 
-const Cart = () => {
+const CartView = () => {
 	return (
 		<div style={styles.container}>
-			CARRITO DE COMPRAS 
+			<Cart/> 
 		</div>
 	);
 };
 
-export default Cart;
+export default CartView;
