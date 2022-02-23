@@ -1,3 +1,6 @@
+//Import CSS
+import "./CategoryType.css";
+
 //Import React Destructuring
 import React, { useState, useEffect } from "react";
 
@@ -9,10 +12,13 @@ import { db } from "../../firebase/firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 //Componentes
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import Item from "../../components/Item/Item";
+
+//LINK ROUTER DOM
+import { Link } from "react-router-dom";
 
 const CategoryType = () => {
-  const [item, setItem] = useState([]);
+  const [items, setItems] = useState([]);
 
   const category = useParams();
   const productCategory = category.category;
@@ -29,17 +35,19 @@ const CategoryType = () => {
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
       });
-      setItem(docs);
+      setItems(docs);
     };
     getProducts();
   }, [productCategory]);
 
   return (
-    <div>
-      {item.map((item) => {
+    <div className="CategoryView">
+      {items.map((item) => {
         return (
-          <div>
-            <ItemDetail data={item} key={item.id} />
+          <div key={item.id}>
+            <Link to={`/detail/${item.id}`} className="LinkCard">
+              <Item data={item} key={item.id} />
+            </Link>
           </div>
         );
       })}

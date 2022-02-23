@@ -4,16 +4,16 @@ const CategoryType = () => {
   return (
     <nav className="Navigation">
       <ul className="List-ul">
-        <Link to="/CategoryType" className="Link">
+        <Link to={`/category/procesador`} className="Link">
           Procesador
         </Link>
-        <Link to="/CategoryType" className="Link">
+        <Link to={`/category/motherboard`} className="Link">
           Motherboard
         </Link>
-        <Link to="/CategoryType" className="Link">
+        <Link to={`/category/gabinete`} className="Link">
           Gabinete
         </Link>
-        <Link to="/CategoryType" className="Link">
+        <Link to={`/category/pc`} className="Link">
           PCs
         </Link>
       </ul>

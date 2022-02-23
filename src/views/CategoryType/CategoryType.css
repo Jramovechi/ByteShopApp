@@ -1,0 +1,6 @@
+.CategoryView {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  margin-top: 50px;
+}

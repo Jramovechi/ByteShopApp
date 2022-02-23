@@ -56,8 +56,8 @@ const ItemDetailContainer = () => {
       ) : (
         item.map((item) => {
           return (
-            <div>
-              <ItemDetail data={item} key={item.id} />
+            <div key={item.id}>
+              <ItemDetail data={item} />
             </div>
           );
         })
