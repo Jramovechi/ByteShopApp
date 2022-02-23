@@ -1,10 +1,9 @@
-.Card{
-    border: solid 4px rgba(229, 248, 10, 1);
-    
+.Card {
+  border: solid 4px rgba(229, 248, 10, 1);
 }
 .textCard {
-    margin-top: 10px;
-    border-top: solid rgba(229, 248, 10, 1);
-    color: rgba(229, 248, 10, 1);
-    font-weight: bold;
+  margin-top: 10px;
+  border-top: solid rgba(229, 248, 10, 1);
+  color: rgba(229, 248, 10, 1);
+  font-weight: bold;
 }

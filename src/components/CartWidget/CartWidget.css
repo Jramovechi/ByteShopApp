@@ -1,12 +1,12 @@
-.Cart{
-    font-size: 25px;
-    color: whiten;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.Cart {
+  font-size: 25px;
+  color: whiten;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.Cart-Count{
-    font-size: 20px;
-    margin-left: 5px;
+.Cart-Count {
+  font-size: 20px;
+  margin-left: 5px;
 }
