@@ -1,11 +1,20 @@
-import React, { useContext } from "react";
+//Import CSS
 import "./Cart.css";
 
+//Import React Destructuring
+import React, { useContext } from "react";
+
+//Import LINK - React Router Dom
+import { Link } from "react-router-dom";
+
+//Import Context
 import { cartContext } from "../../Context/cartContext";
 
+//Import FONT AWESOME ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
+//Components
 import NotFound from "../Not Found/NotFound";
 
 const Cart = () => {
@@ -45,6 +54,10 @@ const Cart = () => {
 
           <h4>Total: {totalCart()}$</h4>
           <div>
+            <Link to="/checkout">
+              <button className="btn-primary">Check-Out</button>
+            </Link>
+
             <button onClick={clearCart}>Limpiar Carrito</button>
           </div>
         </div>

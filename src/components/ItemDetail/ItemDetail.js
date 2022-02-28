@@ -1,12 +1,18 @@
+//Import CSS
+import "./ItemDetail.css";
+
+//Import React Destructuring
 import React, { useState, useContext } from "react";
+
+//Import CONTEXT
 import { cartContext } from "../../Context/cartContext";
 
-//Componentes + CSS
-import "./ItemDetail.css";
+//Componentes
 import ItemCount from "../ItemCount/ItemCount";
 
 //Material UI
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+
 // REACT ROUTER DOM
 import { Link } from "react-router-dom";
 

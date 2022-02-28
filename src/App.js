@@ -18,6 +18,7 @@ import About from "./views/About/About";
 import Detail from "./views/Detail/Detail";
 import CartView from "./views/CartView/CartView";
 import CategoryType from "./views/CategoryType/CategoryType";
+import Checkout from "./components/CheckOut/CheckOut";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/cart" element={<CartView />} />
             <Route path="/detail/:id" element={<Detail />} />
             <Route path="/category/:category" element={<CategoryType />} />
+            <Route exact path="/checkout" element={<Checkout />} />
           </Routes>
         </div>
       </Router>
