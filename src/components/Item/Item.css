@@ -1,9 +1,16 @@
-.Card {
-  border: solid 4px rgba(229, 248, 10, 1);
+.item__cart:hover {
+  box-shadow: 0 0 10px rgb(220, 220, 220);
 }
-.textCard {
-  margin-top: 10px;
-  border-top: solid rgba(229, 248, 10, 1);
-  color: rgba(229, 248, 10, 1);
-  font-weight: bold;
+
+.titleCard {
+  color: #e4f70a;
+}
+
+.categoryCard {
+  font-size: 10px;
+}
+.btnCard {
+  border: #e4f70a;
+  background-color: #e4f70a;
+  color: white;
 }

@@ -1,17 +1,23 @@
-.containerAbout{
-    width: 100%;
-    margin: 50px 0 50px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.containerAbout {
+  width: 100%;
+  margin: 50px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .imgAbout {
-    width: 800px;
+  width: 800px;
 }
 
-.textAbout{
-    width: 80%;
-    font-size: 20px;
+.imgMediosPagos {
+  width: 400px;
+  height: 200px;
+}
+
+.textAbout {
+  width: 60%;
+  font-size: 18px;
+  color: blue;
 }

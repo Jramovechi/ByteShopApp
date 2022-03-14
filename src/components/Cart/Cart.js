@@ -10,59 +10,56 @@ import { Link } from "react-router-dom";
 //Import Context
 import { cartContext } from "../../Context/cartContext";
 
+//BOOTSTRAP
+import { Card, Row, Col, Button } from "react-bootstrap";
+
 //Import FONT AWESOME ICONS
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-//Components
-import NotFound from "../Not Found/NotFound";
-
-const Cart = () => {
-  const { cartList, deleteItem, clearCart, totalCart } =
-    useContext(cartContext);
+const Cart = ({ id, image, title, description, price, cantidad }) => {
+  const { deleteItem } = useContext(cartContext);
 
   return (
-    <div>
-      {!cartList.length > 0 ? (
-        <>
-          <NotFound />
-        </>
-      ) : (
-        <div className="contenedorCartItem">
-          <h3>Carrito</h3>
+    <Card key={id} style={{ width: "800px" }} className="mt-3">
+      <Row className="d-flex justify-content-center align-items-center">
+        <Col xs={5}>
+          <Link to={`/detail/${id}`} title={title}>
+            <Card.Img
+              variant="top"
+              src={image}
+              style={{ height: "9rem", objectFit: "contain" }}
+            />
+          </Link>
+        </Col>
 
-          {cartList.map((prod) => (
-            <div key={prod.id} className="cartItem">
-              <img src={prod.image} alt="" width={80} />
-              <div>
-                <h4>{prod.title}</h4>
-                <div>
-                  <p>Cantidad: {prod.cantidad}</p>
-                  <p>Precio unitario: {prod.price}$</p>
-                  <p>Subtotal: {prod.price * prod.cantidad}$</p>
-                </div>
-              </div>
-              <button
-                key={prod.id}
-                onClick={() => deleteItem(prod.id)}
-                className="deleteTrash"
-              >
-                <FontAwesomeIcon icon={faTrashCan} />
-              </button>
-            </div>
-          ))}
-
-          <h4>Total: {totalCart()}$</h4>
-          <div>
-            <Link to="/checkout">
-              <button className="btn-primary">Check-Out</button>
+        <Col xs={7}>
+          <Card.Body className="d-flex flex-column justify-content-between align-items-start">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to={`/detail/${id}`}
+              title="Ver producto"
+            >
+              <Card.Title className="fs-2 fw-bold cardTitle">
+                {title}
+              </Card.Title>
             </Link>
+            <Card.Text className="textDescription">{description}</Card.Text>
+            <Card.Text className="fs-4 fw-bold textDescription">
+              ${price} x {cantidad} = $ {price * cantidad}
+            </Card.Text>
 
-            <button onClick={clearCart}>Limpiar Carrito</button>
-          </div>
-        </div>
-      )}
-    </div>
+            <Button
+              key={id}
+              onClick={() => deleteItem(id)}
+              className="btn btnCard"
+            >
+              Eliminar del carrito
+            </Button>
+          </Card.Body>
+        </Col>
+      </Row>
+    </Card>
   );
 };
 

@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // COMPONENTS
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
-import CategoryNav from "./components/CategoryNav/CategoryNav";
+import Footer from "./components/Footer/Footer";
 
 // VIEWS
 import Shop from "./views/Shop/Shop";
@@ -27,7 +27,6 @@ const App = () => {
         <div className="App">
           <Header />
           <Nav />
-          <CategoryNav />
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/about" element={<About />} />
@@ -36,6 +35,7 @@ const App = () => {
             <Route path="/category/:category" element={<CategoryType />} />
             <Route exact path="/checkout" element={<Checkout />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </CartProvider>

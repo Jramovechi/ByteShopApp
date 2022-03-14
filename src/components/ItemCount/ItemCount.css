@@ -4,3 +4,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.btnAdd {
+  border: #e4f70a;
+  background-color: #e4f70a;
+  color: white;
+}

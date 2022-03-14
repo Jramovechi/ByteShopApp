@@ -1,20 +1,10 @@
-.contenedorCartItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btnCard {
+  border: #e4f70a;
+  background-color: #e4f70a;
+  color: white;
 }
 
-.cartItem {
-  width: 300px;
-  font-size: 15px;
-  border: solid black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.deleteTrash {
-  font-size: 15px;
+.textDescription {
+  color: blue;
+  text-align: center;
 }

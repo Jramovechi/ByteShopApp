@@ -1,0 +1,19 @@
+.btnCard {
+  border: #e4f70a;
+  background-color: #e4f70a;
+  color: white;
+}
+
+.btnHome {
+  border: #e4f70a;
+  background-color: #e4f70a;
+  color: white;
+}
+
+.total {
+  color: blue;
+}
+
+.imgPagos {
+  width: 500px;
+}

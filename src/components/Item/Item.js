@@ -1,33 +1,32 @@
-import * as React from "react";
+//Import CSS
 import "./Item.css";
-import Card from "@mui/material/Card";
 
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+//Import React
+import * as React from "react";
 
-import Typography from "@mui/material/Typography";
+//Components REACT-BOOSTRAP
+import { Card, Button } from "react-bootstrap";
 
-export default function Item({ data }) {
+const Item = ({ data }) => {
   return (
-    <Card sx={{ maxWidth: 355 }} className="Card">
-      <CardMedia
-        className="imgProduct"
-        component="img"
-        height="280"
-        image={data.image}
-        alt="Product"
+    <Card style={{ width: "15rem" }} className="my-3 item__cart">
+      <Card.Img
+        variant="top"
+        src={data.image}
+        style={{ height: "9rem", objectFit: "contain" }}
       />
-      <CardContent className="textCard">
-        <Typography gutterBottom variant="h5" component="div">
-          Product: {data.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Category: {data.category}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Price: $ {data.price}
-        </Typography>
-      </CardContent>
+      <Card.Body className="d-flex flex-column justify-content-between align-items-center">
+        <Card.Title className="text-center fs-4 fw-bold titleCard">
+          {data.title}
+        </Card.Title>
+        <Card.Text className="text-center categoryCard">
+          (Quedan {data.stock} disponibles)
+        </Card.Text>
+
+        <Button className="d-flex btnCard">$ {data.price}</Button>
+      </Card.Body>
     </Card>
   );
-}
+};
+
+export default Item;

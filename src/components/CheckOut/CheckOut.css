@@ -1,4 +1,5 @@
 .FormContainer {
+  width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +9,10 @@
 
 .Textfield {
   width: 400px;
+}
+
+.textForm {
+  color: #e4f70a;
 }
 
 .btnASendAction {

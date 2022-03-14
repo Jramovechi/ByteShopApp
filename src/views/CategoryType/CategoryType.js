@@ -41,7 +41,7 @@ const CategoryType = () => {
   }, [productCategory]);
 
   return (
-    <div className="CategoryView">
+    <div className="container CategoryView">
       {items.map((item) => {
         return (
           <div key={item.id}>

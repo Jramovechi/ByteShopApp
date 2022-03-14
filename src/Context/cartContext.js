@@ -12,10 +12,11 @@ export const CartProvider = ({ children }) => {
   const addCart = (data) => {
     const index = cartList.findIndex((i) => i.id === data.id); // posición -1
     if (index > -1) {
+      const oldQty = cartList[index].cantidad;
       cartList.splice(index, 1);
-      setCartList([...cartList, { ...data, cantidad: data.counter }]);
+      setCartList([...cartList, { ...data, cantidad: data.cantidad + oldQty }]);
     } else {
-      setCartList([...cartList, { ...data, stock: data.stock }]);
+      setCartList([...cartList, { ...data, cantidad: data.cantidad }]);
     }
   };
 
@@ -37,6 +38,7 @@ export const CartProvider = ({ children }) => {
     setCartList([]);
   };
 
+  //Funcion Cantidad
   const cantidadItem = () => {
     return cartList.reduce((acum, prod) => (acum = acum + prod.cantidad), 0);
   };

@@ -1,0 +1,13 @@
+.dropdownItem {
+  text-decoration: none;
+  color: #e4f70a;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#btnCard {
+  border: #e4f70a;
+  background: #e4f70a;
+  background-color: #e4f70a;
+  color: white;
+}

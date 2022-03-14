@@ -50,19 +50,23 @@ const ItemDetailContainer = () => {
   }, [productID]);
 
   return (
-    <div className="ItemDetailContainer">
+    <>
       {isLoading ? (
-        <Spinner />
+        <section className="d-flex justify-content-center mt-3">
+          <Spinner />
+        </section>
       ) : (
-        item.map((item) => {
-          return (
-            <div key={item.id}>
-              <ItemDetail data={item} />
-            </div>
-          );
-        })
+        <section className="container mt-5">
+          {item.map((item) => {
+            return (
+              <div key={item.id}>
+                <ItemDetail data={item} />
+              </div>
+            );
+          })}
+        </section>
       )}
-    </div>
+    </>
   );
 };
 

@@ -10,63 +10,73 @@ import { cartContext } from "../../Context/cartContext";
 //Componentes
 import ItemCount from "../ItemCount/ItemCount";
 
-//Material UI
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+//Component REACT-BOOTSTRAP
+import { Card, Col, Row, Button } from "react-bootstrap";
 
 // REACT ROUTER DOM
 import { Link } from "react-router-dom";
+
+//IMG Medios de Pagos
+import img from "./pagos.png";
 
 const ItemDetail = ({ data }) => {
   const { cartList, addCart } = useContext(cartContext);
 
   const [comprado, setComprado] = useState(false);
 
-  const onAdd = (stock) => {
+  const onAdd = (cantidad) => {
     setComprado(true);
-    addCart({ ...data, cantidad: stock });
+    addCart({ ...data, cantidad: cantidad });
   };
 
   console.log(cartList);
 
   return (
-    <Card sx={{ maxWidth: 355 }} className="Card">
-      <CardMedia
-        className="imgProduct"
-        component="img"
-        height="280"
-        image={data.image}
-        alt="Product"
-      />
-      <CardContent className="textCard">
-        <Typography gutterBottom variant="h5" component="div">
-          Product: {data.title}
-        </Typography>
-        <Typography variant="h5" color="text.secondary">
-          Category: {data.category}
-        </Typography>
-        <Typography variant="h5" color="text.secondary">
-          Price: $ {data.price}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {data.description}
-        </Typography>
-      </CardContent>
+    <Card style={{ width: "90%", margin: "auto" }}>
+      <Row>
+        <Col xs={12} md={8}>
+          <Card.Img
+            src={data.image}
+            alt={data.title}
+            style={{ height: "25rem", objectFit: "contain" }}
+          />
+        </Col>
 
-      {comprado ? (
-        <>
-          <ItemCount initial={1} stock={data.stock} onAdd={onAdd} />
-          <div>
-            <Link to="/">
-              <button> Seguir comprando </button>
-            </Link>
-            <Link to="/cart">
-              <button> Ir al Carrito </button>
-            </Link>
-          </div>
-        </>
-      ) : (
-        <ItemCount stock={data.stock} initial={1} onAdd={onAdd} />
-      )}
+        <Col xs={12} md={4} className="d-flex">
+          <Card.Body className="cardBody">
+            <Card.Title className="fs-2 fw-bold cardTitle">
+              {data.title}
+            </Card.Title>
+            <Card.Text className="textDescription">
+              {data.description}
+            </Card.Text>
+            <Card.Text className="fs-4 fw-bold">
+              Precio: $ {data.price}
+            </Card.Text>
+
+            <Card.Text className="fs-8">
+              (Quedan {data.stock} disponibles)
+            </Card.Text>
+
+            {comprado ? (
+              <>
+                <ItemCount initial={1} stock={data.stock} onAdd={onAdd} />
+                <div className="mt-2">
+                  <Link to="/">
+                    <Button className="mx-3"> Seguir comprando </Button>
+                  </Link>
+                  <Link to="/cart">
+                    <Button> Ir al Carrito </Button>
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <ItemCount stock={data.stock} initial={1} onAdd={onAdd} />
+            )}
+            <Card.Img className="mt-2" src={img} alt="pagos" />
+          </Card.Body>
+        </Col>
+      </Row>
     </Card>
   );
 };

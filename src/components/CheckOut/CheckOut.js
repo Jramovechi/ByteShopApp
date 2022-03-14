@@ -14,8 +14,9 @@ import { cartContext } from "../../Context/cartContext";
 //Components
 import MessageSuccess from "../MessageSuccess/MessageSuccess";
 
-//Material UI
-import TextField from "@mui/material/TextField";
+//Components REACT-BOOSTRAP
+import { Form, Button } from "react-bootstrap";
+import { DialogContent } from "@mui/material";
 
 const initialState = {
   name: "",
@@ -23,16 +24,9 @@ const initialState = {
   email: "",
 };
 
-const styles = {
-  containerCheckOut: {
-    textAlign: "center",
-    paddingTop: 20,
-  },
-};
-
 const CheckOut = () => {
   const [values, setValues] = useState(initialState);
-  // Este estado está destinado a guardar el id de la compra
+  // Este estado está destinado a guardar el ID de la COMPRA
   const [purchaseID, setPurchaseID] = useState("");
 
   const { clearCart } = useContext(cartContext);
@@ -54,35 +48,59 @@ const CheckOut = () => {
   };
 
   return (
-    <div style={styles.containerCheckOut}>
-      <h1>CheckOut</h1>
-      <form className="FormContainer" onSubmit={onSubmit}>
-        <TextField
-          placeholder="Name"
-          style={{ margin: 10, width: 400 }}
-          value={values.name}
-          name="name"
-          onChange={handleOnChange}
-        />
-        <TextField
-          placeholder="Last Name"
-          style={{ margin: 10, width: 400 }}
-          value={values.lastName}
-          name="lastName"
-          onChange={handleOnChange}
-        />
-        <TextField
-          placeholder="Email"
-          style={{ margin: 10, width: 400 }}
-          value={values.email}
-          name="email"
-          onChange={handleOnChange}
-        />
-        <button className="btnASendAction" onClick={clearCart}>
-          Send
-        </button>
-      </form>
-      {purchaseID && <MessageSuccess purchaseID={purchaseID} />}
+    <div className="container d-flex flex-column justify-content-center align-items-center mt-5">
+      <Form className="FormContainer border" onSubmit={onSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="fs-5 fw-bold textForm">Nombre</Form.Label>
+          <Form.Control
+            type="name"
+            placeholder="Nombre"
+            style={{ margin: 10, width: 400 }}
+            value={values.name}
+            name="name"
+            onChange={handleOnChange}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="fs-5 fw-bold textForm">Apellido</Form.Label>
+          <Form.Control
+            type="lastName"
+            placeholder="Apellido"
+            style={{ margin: 10, width: 400 }}
+            value={values.lastName}
+            name="lastName"
+            onChange={handleOnChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label className="fs-5 fw-bold textForm">Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Email"
+            style={{ margin: 10, width: 400 }}
+            value={values.email}
+            name="email"
+            onChange={handleOnChange}
+          />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+        <Button
+          variant="primary"
+          type="submit"
+          className="btnASendAction"
+          onClick={clearCart}
+        >
+          Submit
+        </Button>
+      </Form>
+      <div className="container">
+        <DialogContent>
+          {purchaseID && <MessageSuccess purchaseID={purchaseID} />}
+        </DialogContent>
+      </div>
     </div>
   );
 };

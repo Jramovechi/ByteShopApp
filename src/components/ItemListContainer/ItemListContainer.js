@@ -11,9 +11,13 @@ import { db } from "../../firebase/firebaseConfig";
 //LINK ROUTER DOM
 import { Link } from "react-router-dom";
 
+//BOOTSTRAP
+import { Col, Row } from "react-bootstrap";
+
 //Componentes
 import Item from "../Item/Item";
 import Spinner from "../Spinner/Spinner";
+import CategoryNav from "../CategoryNav/CategoryNav";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -43,17 +47,23 @@ const ItemListContainer = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="ItemListContainer-container">
-          {items.map((item) => {
-            return (
-              <div key={item.id}>
+        <section className="container">
+          <CategoryNav />
+          <Row>
+            {items.map((item) => (
+              <Col
+                xs={6}
+                md={3}
+                className="d-flex justify-content-center"
+                key={item.id}
+              >
                 <Link to={`/detail/${item.id}`} className="LinkCard">
-                  <Item data={item} />
+                  <Item data={item} key={item.id} />
                 </Link>
-              </div>
-            );
-          })}
-        </div>
+              </Col>
+            ))}
+          </Row>
+        </section>
       )}
     </>
   );

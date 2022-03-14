@@ -4,7 +4,7 @@ import img from "./bits-and-bytes-logo-final.png";
 
 const Header = () => {
   return (
-    <div className="Header">
+    <div className="container Header">
       <h1>Byte Shop</h1>
       <img src={img} alt="Logo" width="150px" />
     </div>
