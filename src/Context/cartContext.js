@@ -1,3 +1,4 @@
+//Import REACT
 import React, { createContext, useState } from "react";
 
 // 1 - CREAR EL CONTEXTO

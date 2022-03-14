@@ -1,6 +1,3 @@
-//Import CSS
-import "./ItemDetailContainer.css";
-
 //Import React Destructuring
 import React, { useEffect, useState } from "react";
 

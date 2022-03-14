@@ -1,5 +1,10 @@
-import React from "react";
+//CSS
 import "./Header.css";
+
+//Import REACT
+import React from "react";
+
+//Import IMG
 import img from "./bits-and-bytes-logo-final.png";
 
 const Header = () => {

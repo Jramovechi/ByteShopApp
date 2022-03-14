@@ -18,6 +18,7 @@ import MessageSuccess from "../MessageSuccess/MessageSuccess";
 import { Form, Button } from "react-bootstrap";
 import { DialogContent } from "@mui/material";
 
+//Inicializamos nuestro Estado
 const initialState = {
   name: "",
   lastName: "",

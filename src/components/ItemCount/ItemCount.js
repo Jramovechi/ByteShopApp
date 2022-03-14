@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+//CSS
 import "./ItemCount.css";
 
+//Import REACT
+import React, { useState } from "react";
+
+//Import Icons FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 

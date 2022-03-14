@@ -1,10 +1,16 @@
+//CSS
 import "./Nav.css";
 
+//Import REACT
 import React, { useContext } from "react";
 
+//Import LINK - React Router Dom
 import { Link } from "react-router-dom";
+
+//Components
 import CartWidget from "../CartWidget/CartWidget";
 
+//CONTEXT
 import { cartContext } from "../../Context/cartContext";
 
 const NavBar = () => {

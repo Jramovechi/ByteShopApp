@@ -1,4 +1,7 @@
+//CSS
 import "./CartWidget.css";
+
+//Import Icono FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 

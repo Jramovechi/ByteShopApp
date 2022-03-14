@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 //BOOTSTRAP
 import { Button } from "react-bootstrap";
 
-//IMGs
+//Import IMGs
 import img from "./byteShop3.jpg";
 import imgs from "./pagos.png";
 

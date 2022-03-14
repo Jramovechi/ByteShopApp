@@ -1,13 +1,12 @@
-import "./Detail.css"
+//Components
 import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetailContainer";
 
 const Detail = () => {
-
-	return (
-		<div>
-			<ItemDetailContainer />
-		</div>
-	);
+  return (
+    <div>
+      <ItemDetailContainer />
+    </div>
+  );
 };
 
 export default Detail;

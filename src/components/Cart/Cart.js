@@ -13,10 +13,6 @@ import { cartContext } from "../../Context/cartContext";
 //BOOTSTRAP
 import { Card, Row, Col, Button } from "react-bootstrap";
 
-//Import FONT AWESOME ICONS
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-
 const Cart = ({ id, image, title, description, price, cantidad }) => {
   const { deleteItem } = useContext(cartContext);
 
