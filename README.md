@@ -107,7 +107,7 @@ npm start
 
 ## Demo del Proyecto
 
-- [REFUGIO Tienda Deco](https://refugio-tiendadeco-marceloluismoreno.netlify.app/)
+- [Byte Shop]()
 
 ## Avance del Proyecto
 
@@ -115,7 +115,7 @@ Vista del proyecto en ejecución:
 
 ## Licencia
 
-- [MLM](https://www.linkedin.com/in/jonathan-lain-ramovechi/)
+- [JLR](https://www.linkedin.com/in/jonathan-lain-ramovechi/)
   Ramovechi Jonathan Lain
 
 **Software Libre!!!**
