@@ -1,10 +1,8 @@
-![Byte SHOP](https://https://github.com/Jramovechi/ByteShopApp)
-
 # Byte Shop Tienda de Tecnologia
 
 ## _Proyecto e-commerce de una tienda de objetos tecnologicos._
 
-> Proyecto final E-commerce, Curso React-Js de [CoderHouse](https://www.coderhouse.com/). Año 2021
+> Proyecto final E-commerce, Curso React-Js de [CoderHouse](https://www.coderhouse.com/). Año 2022
 
 ## Contenido
 
@@ -26,11 +24,11 @@
 Este proyecto se está desarrolando en React-Js:
 
 - [React-Js](https://create-react-app.dev/) - La App fue creada con Create React App
-- Utiliza una serea de librerías externas (detalladas en Complementos).
+- Utiliza una serie de librerías externas (detalladas en Complementos).
 
 ## Instalación
 
-Refugio Tienda Deco requiere [Node.js](https://nodejs.org/en/) para ejecutarse.
+Byte Shop requiere [Node.js](https://nodejs.org/en/) para ejecutarse.
 
 Instale las dependencias y devDependencies e inicie el servidor.
 
@@ -112,6 +110,8 @@ npm start
 ## Avance del Proyecto
 
 Vista del proyecto en ejecución:
+
+<p><img aling="center" src="" width="500" height="320" /></p>
 
 ## Licencia
 
