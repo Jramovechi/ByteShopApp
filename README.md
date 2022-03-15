@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+![Byte SHOP](https://https://github.com/Jramovechi/ByteShopApp)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Byte Shop Tienda de Tecnologia
 
-## Available Scripts
+## _Proyecto e-commerce de una tienda de objetos tecnologicos._
 
-In the project directory, you can run:
+> Proyecto final E-commerce, Curso React-Js de [CoderHouse](https://www.coderhouse.com/). Año 2021
 
-### `npm start`
+## Contenido
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Este proyecto (actuanmente en desarrollo) tiene una única rama, main.
+- Incompleto para comercializar.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Objetivos y Características
 
-### `npm test`
+> El objetivo del proyecto es crear una Tienda E-commerce (un sistema de venta de productos con gestión de
+> su base de datos a través de Firebase), en una single-page application (SPA), o aplicación de página única.
+> Donde se puede navegar por los distintos productos (también sobre sus categorías)
+> e ir a sus detalles. Desde el detalle se puede ver la descripción, foto y precio del producto y permite
+> agregarlos al carrito. También se pueden ver y modificar los elementos del carrito, para luego finalizar la compra de
+> los elementos cargados al mismo a través del llenado de un formulario de compra. Y finaliza guardando la orden
+> de compra (con todos sus productos más la fecha de compra) en una base de datos del proyecto, alojada en Firebase.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tenología
 
-### `npm run build`
+Este proyecto se está desarrolando en React-Js:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React-Js](https://create-react-app.dev/) - La App fue creada con Create React App
+- Utiliza una serea de librerías externas (detalladas en Complementos).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Refugio Tienda Deco requiere [Node.js](https://nodejs.org/en/) para ejecutarse.
 
-### `npm run eject`
+Instale las dependencias y devDependencies e inicie el servidor.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+$ cd coderhouse-ecommerce
+$ npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Para clonar este repositorio debe seguir las siguientes instrucciones:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1 - Abre el Visual Studio Code
 
-## Learn More
+2 - Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3 - Escribe `git clone` y luego pega la siguiente URL `https://https://github.com/Jramovechi/ByteShopApp`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4 - Presiona `Enter` para crear tu clon local.
 
-### Code Splitting
+Por mayor información: `https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Complementos
 
-### Analyzing the Bundle Size
+Una vez clonado el repositorio, para que el proyecto se ejecute correctamente, se deben instalar las siguientes librerias:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`react-router.dom` : Es una librería que nos permite el enrutamiento y navegabilidad entre los diferentes componentes de nuestra SPA. Para instalarlo se debe ejecutar en la terminal lo siguiente:
 
-### Making a Progressive Web App
+```sh
+npm install react-router-dom
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`• Firebase` : Libreria de servicios de Google, que nos facilita y permite desarrollar el front-end, sin preocuparnos del back-end. Permite satisfacer las distintas necesidades de esta aplicación y su ciclo de desarrollo, dentro de las cuales encontramos: Seguridad y autenticación, Almacenamiento y consulta, Hosting, Monitoreo, Functions y más.
 
-### Advanced Configuration
+`• react-bootstrap 5.1.1` : Es un framework front-end con el que le damos los diferentes estilos a la SPA.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+npm install react-bootstrap@next bootstrap@5.1.3
+```
 
-### Deployment
+`• bootstrap 5.0` : Kit de herramientas de código abierto de front-end, con el cual se le da estilo al proyecto. El mismo está inyectado a través de un link agregado a index.html
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```sh
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+```
 
-### `npm run build` fails to minify
+`• bootstrap icons` : Biblioteca de íconos de código abierto, de alta calidad y gratuitos. Inyectados al proyecto a través de un Link.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+<link	rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"	/>
+```
+
+`• material-ui` : BEs un framework front-end con el que le damos los diferentes estilos a la SPA. Utilizado para algunos componentes de nuestro proyecto
+
+```sh
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+`• FontAwesome` : Biblioteca de íconos de código abierto, de alta calidad y gratuitos. Inyectados al proyecto a través de un Link.
+
+```sh
+<link	rel="stylesheet" href="https://fontawesome.com/"/>
+```
+
+## Ejecución
+
+Para ejecutar este proyecto simplemente escriba y ejecute en su consola de Visual Studio Code:
+
+```sh
+npm start
+```
+
+> Esto hará que la aplicación se ejecute en modo de desarrollo.
+> Abra http: // localhost: 3000 para verlo en el navegador.
+
+## Demo del Proyecto
+
+- [REFUGIO Tienda Deco](https://refugio-tiendadeco-marceloluismoreno.netlify.app/)
+
+## Avance del Proyecto
+
+Vista del proyecto en ejecución:
+
+## Licencia
+
+- [MLM](https://www.linkedin.com/in/jonathan-lain-ramovechi/)
+  Ramovechi Jonathan Lain
+
+**Software Libre!!!**
