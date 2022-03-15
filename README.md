@@ -111,7 +111,7 @@ npm start
 
 Vista del proyecto en ejecución:
 
-<p><img aling="center" src="https://github.com/Jramovechi/ByteShopApp/blob/main/GifProyecto.gif" width="600" height="350" /></p>
+<p><img aling="right" src="https://github.com/Jramovechi/ByteShopApp/blob/main/GifProyecto.gif" width="800" height="400" /></p>
 
 ## Licencia
 
