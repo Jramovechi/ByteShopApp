@@ -13,12 +13,14 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 
 //Componentes
 import Item from "../../components/Item/Item";
+import Spinner from "../../components/Spinner/Spinner";
 
 //LINK ROUTER DOM
 import { Link } from "react-router-dom";
 
 const CategoryType = () => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const category = useParams();
   const productCategory = category.category;
@@ -38,20 +40,32 @@ const CategoryType = () => {
       setItems(docs);
     };
     getProducts();
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   }, [productCategory]);
 
   return (
-    <div className="container CategoryView">
-      {items.map((item) => {
-        return (
-          <div key={item.id}>
-            <Link to={`/detail/${item.id}`} className="LinkCard">
-              <Item data={item} key={item.id} />
-            </Link>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {isLoading ? (
+        <div className="d-flex justify-content-center align-items-center">
+          <Spinner />
+        </div>
+      ) : (
+        <div className="container CategoryView">
+          {items.map((item) => {
+            return (
+              <div key={item.id}>
+                <Link to={`/detail/${item.id}`} className="LinkCard">
+                  <Item data={item} key={item.id} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 };
 

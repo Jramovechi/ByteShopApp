@@ -52,7 +52,7 @@ const ItemListContainer = () => {
           <Row>
             {items.map((item) => (
               <Col
-                xs={4}
+                xs={12}
                 md={3}
                 className="d-flex justify-content-center"
                 key={item.id}
