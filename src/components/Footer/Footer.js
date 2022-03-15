@@ -14,7 +14,7 @@ import tw from "./twitter.svg";
 
 const Footer = () => {
   return (
-    <div className=" container d-flex bg-black mt-4">
+    <div className="container d-flex bg-black mt-4">
       <div className="d-flex flex-column justify-content-center align-items-center w-25">
         <h2 className="titleFooter">ByteShop</h2>
         <p className="textFooter">
@@ -48,7 +48,7 @@ const Footer = () => {
       <div className="d-flex flex-column justify-content-center align-items-center w-25 mt-1 mb-3">
         <h2 className="titleFooter">Redes Sociales</h2>
 
-        <div class="d-flex flex-column">
+        <div className="d-flex flex-column">
           <img src={ig} className="icons" alt="Icons"></img>
           <img src={fb} className="icons my-2" alt="Icons"></img>
           <img src={tw} className="icons" alt="Icons"></img>

@@ -30,7 +30,7 @@ const NavBar = () => {
           className="Link d-flex flex-row justify-content-between"
         >
           <CartWidget />
-          <div className="mr-2 text-lg">
+          <div className="mt-2 text-lg">
             {cantidadItem() !== 0 && cantidadItem()}
           </div>
         </Link>
